@@ -1,0 +1,1 @@
+export const heroFeature = ["HTML + CSS ", "Responsive Layout", "Clean Structure", "Download ZIP"]
