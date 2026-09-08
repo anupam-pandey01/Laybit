@@ -55,7 +55,7 @@ const Hero = () => {
             </Link>
           </div>
           <div className="flex items-center gap-4 text-center text-xs">
-            <span>⭐ 3 Free Credits</span> • <span>No Credit Card Requried</span>
+            <span>⭐ 2 Free Credits</span> • <span>No Credit Card Requried</span>
           </div>
         </motion.div>
 
