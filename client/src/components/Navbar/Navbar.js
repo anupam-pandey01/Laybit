@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Boxes, Menu, X } from "lucide-react";
@@ -14,24 +14,14 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <motion.header
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "glass border-b border-border" : "bg-transparent"
-      }`}
+      className="glass fixed inset-x-0 top-0 z-50 border-b border-border"
     >
       <Container className="flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
@@ -56,7 +46,7 @@ export default function Navbar() {
 
         <div className="hidden lg:block">
           <Link
-            href="#get-started"
+            href="/sign-up"
             className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-[0_0_0_1px_rgba(99,102,241,0.4)] transition-all hover:scale-[1.03] hover:bg-primary-hover active:scale-[0.98]"
           >
             Get Started
@@ -93,7 +83,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="#get-started"
+              href="/sign-up"
               className="mt-2 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white"
             >
               Get Started
